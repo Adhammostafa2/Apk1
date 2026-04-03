@@ -10,12 +10,9 @@ class ApiService {
   final String actualDeviceIP = '192.168.1.X';
   
   String get baseUrl {
-    if (!kIsWeb && defaultTargetPlatform == TargetPlatform.android) {
-      // 10.0.2.2 is only for Emulators. For a physical phone, it MUST be the actualDeviceIP!
-      return 'http://$actualDeviceIP:3000'; 
+ return
+   'https://apk-railway-production.up.railway.app'; 
     }
-    return 'http://127.0.0.1:3000'; // Windows/Web/iOS emulator
-  }
 
   Future<VideoInfo> analyzeVideo(String url) async {
     try {
